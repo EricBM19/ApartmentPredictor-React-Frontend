@@ -1,5 +1,6 @@
 import ApartmentsHeader from "./ApartmentsHeader";
 import ApartmentsPage from "./ApartmentsPage";
+import ApartmentDelete from "./ApartmentDelete";
 import { useState } from "react";
 
 export default function Home() {
@@ -15,7 +16,7 @@ export default function Home() {
       case "Update":
         return <p>{view}</p>;
       case "Delete":
-        return <p>{view}</p>;
+        return <ApartmentDelete />;
       default:
         return null;
     }
