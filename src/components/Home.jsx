@@ -1,15 +1,33 @@
 import ApartmentsHeader from "./ApartmentsHeader";
+import ApartmentsPage from "./ApartmentsPage";
 import { useState } from "react";
 
 export default function Home() {
     const [view, setView] = useState("Home");
-    return(
+
+
+  const renderView = () => {
+    switch (view) {
+      case "Home":
+        return <ApartmentsPage />;
+      case "Create":
+        return <p>{view}</p>;
+      case "Update":
+        return <p>{view}</p>;
+      case "Delete":
+        return <p>{view}</p>;
+      default:
+        return null;
+    }
+  };
+
+      return (
         <>
-        <ApartmentsHeader view={view} setView={setView}/>
-        <div className="homeDiv">
-            <h1>Apartments Predictor Home</h1>
-            <p>{view}</p>
-        </div>
+            <ApartmentsHeader setView={setView} />
+
+            <div className="homeDiv">
+                {renderView()}
+            </div>
         </>
-    );
+  );
 }

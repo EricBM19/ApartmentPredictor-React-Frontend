@@ -1,4 +1,4 @@
-import { AppBar, Button, Toolbar, Typography, Box, IconButton } from "@mui/material";
+import { AppBar, Button, Toolbar, Box } from "@mui/material";
 import reactLogo from '../assets/react.svg'
 
 export default function ApartmentsHeader({view, setView}) {
