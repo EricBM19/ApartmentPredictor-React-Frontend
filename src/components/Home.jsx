@@ -1,34 +1,54 @@
+import { useState } from "react";
 import ApartmentsHeader from "./ApartmentsHeader";
 import ApartmentsPage from "./ApartmentsPage";
 import ApartmentDelete from "./ApartmentDelete";
-import { useState } from "react";
+import ApartmentCreate from "./ApartmentCreate";
+import { apartmentsList } from "../data/apartments";
 
 export default function Home() {
-    const [view, setView] = useState("Home");
+  const [view, setView] = useState("Home");
 
+  // 🔹 ESTADO GLOBAL
+  const [apartments, setApartments] = useState(apartmentsList);
 
   const renderView = () => {
     switch (view) {
       case "Home":
-        return <ApartmentsPage />;
+        return (
+          <ApartmentsPage
+            apartments={apartments}
+            setApartments={setApartments}
+          />
+        );
+
       case "Create":
-        return <p>{view}</p>;
-      case "Update":
-        return <p>{view}</p>;
+        return (
+          <ApartmentCreate
+            setApartments={setApartments}
+            setView={setView}
+          />
+        );
+
       case "Delete":
-        return <ApartmentDelete />;
+        return (
+          <ApartmentDelete
+            apartments={apartments}
+            setApartments={setApartments}
+          />
+        );
+
       default:
         return null;
     }
   };
 
-      return (
-        <>
-            <ApartmentsHeader setView={setView} />
+  return (
+    <>
+      <ApartmentsHeader setView={setView} />
 
-            <div className="homeDiv">
-                {renderView()}
-            </div>
-        </>
+      <div className="homeDiv">
+        {renderView()}
+      </div>
+    </>
   );
 }

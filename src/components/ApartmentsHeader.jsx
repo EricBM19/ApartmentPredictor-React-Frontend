@@ -11,7 +11,6 @@ export default function ApartmentsHeader({view, setView}) {
                     <Box sx={{ flexGrow: 5 }} />
                     <Button color="inherit" onClick={() => setView("Home")}>Home</Button>
                     <Button color="inherit" onClick={() => setView("Create")}>Create</Button>
-                    <Button color="inherit" onClick={() => setView("Update")}>Update</Button>
                     <Button color="inherit" onClick={() => setView("Delete")}>Delete</Button>
                 </Toolbar>
             </AppBar>
