@@ -22,30 +22,36 @@ function ApartmentsTableVisuals({ apartments, setApartments }) {
   };
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value, type, checked } = e.target;
     setEditingApartment((prev) => ({
       ...prev,
-      [name]: value,
+      [name]: type === "checkbox" ? checked : value,
     }));
   };
 
   const saveApartment = () => {
     setApartments((prev) =>
-      prev.map((ap) =>
-        ap.id === editingId ? editingApartment : ap
-      )
+      prev.map((ap) => (ap.id === editingId ? editingApartment : ap))
     );
     setEditingId(null);
     setEditingApartment(null);
   };
 
   return (
-    <table border="1" cellPadding="8">
+    <div className="apartments-table">
+      <table className="apartments-table-content">
       <thead>
         <tr>
           <th>Title</th>
           <th>Price</th>
+          <th>Rooms</th>
+          <th>Bathrooms</th>
+          <th>Surface</th>
           <th>Location</th>
+          <th>Description</th>
+          <th>Image</th>
+          <th>Interested</th>
+          <th>Created At</th>
           <th>Update</th>
         </tr>
       </thead>
@@ -84,6 +90,45 @@ function ApartmentsTableVisuals({ apartments, setApartments }) {
               <td>
                 {isEditing ? (
                   <input
+                    type="number"
+                    name="rooms"
+                    value={editingApartment.rooms}
+                    onChange={handleChange}
+                  />
+                ) : (
+                  apartment.rooms
+                )}
+              </td>
+
+              <td>
+                {isEditing ? (
+                  <input
+                    type="number"
+                    name="bathrooms"
+                    value={editingApartment.bathrooms}
+                    onChange={handleChange}
+                  />
+                ) : (
+                  apartment.bathrooms
+                )}
+              </td>
+
+              <td>
+                {isEditing ? (
+                  <input
+                    type="number"
+                    name="surface"
+                    value={editingApartment.surface}
+                    onChange={handleChange}
+                  />
+                ) : (
+                  apartment.surface
+                )}
+              </td>
+
+              <td>
+                {isEditing ? (
+                  <input
                     name="location"
                     value={editingApartment.location}
                     onChange={handleChange}
@@ -95,11 +140,67 @@ function ApartmentsTableVisuals({ apartments, setApartments }) {
 
               <td>
                 {isEditing ? (
-                  <button onClick={saveApartment}>Save</button>
+                  <input
+                    name="description"
+                    value={editingApartment.description}
+                    onChange={handleChange}
+                  />
                 ) : (
-                  <button onClick={() => startEdit(apartment)}>
-                    Update
-                  </button>
+                  apartment.description
+                )}
+              </td>
+
+              <td className="image-cell">
+                {isEditing ? (
+                  <input
+                    name="imageUrl"
+                    value={editingApartment.imageUrl}
+                    onChange={handleChange}
+                  />
+                ) : apartment.imageUrl ? (
+                  <img
+                    src={apartment.imageUrl}
+                    alt={apartment.title}
+                    width="80"
+                  />
+                ) : (
+                  ""
+                )}
+              </td>
+
+              <td>
+                {isEditing ? (
+                  <input
+                    type="checkbox"
+                    name="interested"
+                    checked={editingApartment.interested}
+                    onChange={handleChange}
+                  />
+                ) : apartment.interested ? (
+                  "✅"
+                ) : (
+                  "❌"
+                )}
+              </td>
+
+              <td>
+                {isEditing ? (
+                  <input
+                    type="datetime-local"
+                    name="createdAt"
+                    value={editingApartment.createdAt}
+                    onChange={handleChange}
+                  />
+                ) : (
+                  new Date(apartment.createdAt).toLocaleString()
+                )}
+              </td>
+
+              <td>
+                {isEditing ? (
+                  <button className="btn btn-save"  onClick={saveApartment}>Save</button>
+                ) : (
+                  <button className="btn btn-update" onClick={() => startEdit(apartment)}>Update</button>
                 )}
               </td>
             </tr>
@@ -107,5 +208,6 @@ function ApartmentsTableVisuals({ apartments, setApartments }) {
         })}
       </tbody>
     </table>
+    </div>
   );
 }

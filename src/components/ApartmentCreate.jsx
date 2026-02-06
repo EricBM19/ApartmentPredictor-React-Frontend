@@ -5,15 +5,21 @@ export default function ApartmentCreate({ setApartments, setView }) {
     id: "",
     title: "",
     price: "",
+    rooms: "",
+    bathrooms: "",
+    surface: "",
     location: "",
     description: "",
+    imageUrl: "",
+    interested: false,
+    createdAt: "",
   });
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value, type, checked } = e.target;
     setNewApartment((prev) => ({
       ...prev,
-      [name]: value,
+      [name]: type === "checkbox" ? checked : value,
     }));
   };
 
@@ -23,14 +29,24 @@ export default function ApartmentCreate({ setApartments, setView }) {
       return;
     }
 
+    if (!newApartment.createdAt) {
+      newApartment.createdAt = new Date().toISOString();
+    }
+
     setApartments((prev) => [...prev, newApartment]);
 
     setNewApartment({
       id: "",
       title: "",
       price: "",
+      rooms: "",
+      bathrooms: "",
+      surface: "",
       location: "",
       description: "",
+      imageUrl: "",
+      interested: false,
+      createdAt: "",
     });
 
     setView("Home");
@@ -63,6 +79,30 @@ export default function ApartmentCreate({ setApartments, setView }) {
       />
 
       <input
+        type="number"
+        name="rooms"
+        placeholder="Rooms"
+        value={newApartment.rooms}
+        onChange={handleChange}
+      />
+
+      <input
+        type="number"
+        name="bathrooms"
+        placeholder="Bathrooms"
+        value={newApartment.bathrooms}
+        onChange={handleChange}
+      />
+
+      <input
+        type="number"
+        name="surface"
+        placeholder="Surface (m²)"
+        value={newApartment.surface}
+        onChange={handleChange}
+      />
+
+      <input
         name="location"
         placeholder="Location"
         value={newApartment.location}
@@ -73,6 +113,30 @@ export default function ApartmentCreate({ setApartments, setView }) {
         name="description"
         placeholder="Description"
         value={newApartment.description}
+        onChange={handleChange}
+      />
+
+      <input
+        name="imageUrl"
+        placeholder="Image URL"
+        value={newApartment.imageUrl}
+        onChange={handleChange}
+      />
+
+      <label>
+        <input
+          type="checkbox"
+          name="interested"
+          checked={newApartment.interested}
+          onChange={handleChange}
+        />
+        Interested
+      </label>
+
+      <input
+        type="datetime-local"
+        name="createdAt"
+        value={newApartment.createdAt}
         onChange={handleChange}
       />
 

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Toolbar } from "@mui/material";
 import ApartmentsHeader from "./ApartmentsHeader";
 import ApartmentsPage from "./ApartmentsPage";
 import ApartmentDelete from "./ApartmentDelete";
@@ -7,8 +8,6 @@ import { apartmentsList } from "../data/apartments";
 
 export default function Home() {
   const [view, setView] = useState("Home");
-
-  // 🔹 ESTADO GLOBAL
   const [apartments, setApartments] = useState(apartmentsList);
 
   const renderView = () => {
@@ -45,7 +44,7 @@ export default function Home() {
   return (
     <>
       <ApartmentsHeader setView={setView} />
-
+      <Toolbar />
       <div className="homeDiv">
         {renderView()}
       </div>

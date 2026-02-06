@@ -25,12 +25,14 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  flex-direction: column;
+  align-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
 
 h1 {
+  text-align: center;
   font-size: 3.2em;
   line-height: 1.1;
 }
@@ -49,6 +51,7 @@ button {
 button:hover {
   border-color: #646cff;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -65,4 +68,83 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+.apartments-table {
+  width: 95%;
+  margin: 2rem auto;
+  border-radius: 20px;
+  background-color: lightskyblue;
+  border: 1px solid black;
+  overflow:hidden;
+}
+
+.apartments-table-content {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.apartments-table th {
+  background-color: lightslategray;
+  color: whitesmoke;
+}
+
+.apartments-table input[type="text"],
+.apartments-table input[type="number"],
+.apartments-table input[type="datetime-local"] {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 0.4rem;
+  height: 32px;
+
+  border-radius: 6px;
+  border: 1px solid #555;
+  font-family: inherit;
+}
+
+.apartments-table th,
+.apartments-table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid black;
+  text-align: center;
+}
+
+.apartments-table tr:hover {
+  background-color: lightblue;
+}
+
+.apartments-table tr {
+  font-size: large;
+}
+
+.btn {
+  border-radius: 20px;
+  padding: 0.5em 1em;
+  font-weight: 500;
+}
+
+.btn-save {
+  background-color: lightgreen;
+}
+
+.btn-save:hover {
+  background-color: limegreen;
+  transform: translateY(-1px);
+}
+
+.btn-update {
+  background-color: orange;
+}
+
+.btn-update:hover {
+  background-color: lightsalmon;
+  transform: translateY(-1px);
+}
+
+.image-cell img {
+  width: 150px;
+  height: auto;
+  border-radius: 3px;
+  object-fit: cover;
 }

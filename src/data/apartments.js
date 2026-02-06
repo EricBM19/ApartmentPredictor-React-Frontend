@@ -1,4 +1,5 @@
-export const apartmentsList = [{
+export const apartmentsList = [
+  {
     id: "apt-001",
     title: "Bright flat in Eixample",
     price: 1250,
@@ -7,19 +8,112 @@ export const apartmentsList = [{
     surface: 85,
     location: "Barcelona, Eixample Dreta",
     description: "Recently renovated, elevator, balcony.",
-    imageUrl: "https://images.unsplash.com/photo-...",
+    imageUrl: "https://plus.unsplash.com/premium_photo-1676823553207-758c7a66e9bb",
     interested: false,
     createdAt: "2026-01-15T10:30:00Z"
-},{
+  },
+  {
     id: "apt-002",
-    title: "Bright flat in Eixample",
-    price: 1250,
-    rooms: 3,
+    title: "Cozy studio in Gràcia",
+    price: 900,
+    rooms: 1,
     bathrooms: 1,
-    surface: 85,
-    location: "Barcelona, Eixample Dreta",
-    description: "Recently renovated, elevator, balcony.",
-    imageUrl: "https://images.unsplash.com/photo-...",
+    surface: 40,
+    location: "Barcelona, Gràcia",
+    description: "Perfect for singles, near metro, quiet street.",
+    imageUrl: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2",
     interested: false,
-    createdAt: "2026-01-15T10:30:00Z"
-}]
+    createdAt: "2026-01-20T09:00:00Z"
+  },
+  {
+    id: "apt-003",
+    title: "Modern apartment near Sagrada Familia",
+    price: 1800,
+    rooms: 2,
+    bathrooms: 2,
+    surface: 75,
+    location: "Barcelona, Eixample",
+    description: "New building, fully equipped kitchen, great view.",
+    imageUrl: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+    interested: false,
+    createdAt: "2026-01-18T15:45:00Z"
+  },
+  {
+    id: "apt-004",
+    title: "Charming flat in Born",
+    price: 1500,
+    rooms: 2,
+    bathrooms: 1,
+    surface: 65,
+    location: "Barcelona, El Born",
+    description: "Wooden floors, sunny, close to restaurants and shops.",
+    imageUrl: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914",
+    interested: false,
+    createdAt: "2026-01-22T11:20:00Z"
+  },
+  {
+    id: "apt-005",
+    title: "Luxury penthouse in Passeig de Gràcia",
+    price: 3200,
+    rooms: 3,
+    bathrooms: 2,
+    surface: 120,
+    location: "Barcelona, Passeig de Gràcia",
+    description: "Terrace, panoramic city views, high-end finishes.",
+    imageUrl: "https://images.unsplash.com/photo-1565623833408-d77e39b88af6",
+    interested: false,
+    createdAt: "2026-01-25T14:10:00Z"
+  },
+  {
+    id: "apt-006",
+    title: "Quiet apartment near Montjuïc",
+    price: 1100,
+    rooms: 2,
+    bathrooms: 1,
+    surface: 70,
+    location: "Barcelona, Montjuïc",
+    description: "Close to parks, cozy and bright, ideal for couples.",
+    imageUrl: "https://images.unsplash.com/photo-1502672023488-70e25813eb80",
+    interested: false,
+    createdAt: "2026-01-28T08:30:00Z"
+  },
+  {
+    id: "apt-007",
+    title: "Sunny loft in Poblenou",
+    price: 1300,
+    rooms: 2,
+    bathrooms: 1,
+    surface: 80,
+    location: "Barcelona, Poblenou",
+    description: "Open space loft, modern kitchen, lots of natural light.",
+    imageUrl: "https://images.unsplash.com/photo-1625707695772-5dd6c1f9c107",
+    interested: false,
+    createdAt: "2026-02-01T10:00:00Z"
+  },
+  {
+    id: "apt-008",
+    title: "Cozy flat in Sant Antoni",
+    price: 1200,
+    rooms: 1,
+    bathrooms: 1,
+    surface: 50,
+    location: "Barcelona, Sant Antoni",
+    description: "Perfect for singles, quiet neighborhood, renovated.",
+    imageUrl: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914",
+    interested: false,
+    createdAt: "2026-02-02T09:30:00Z"
+  },
+  {
+    id: "apt-009",
+    title: "Modern apartment in Barceloneta",
+    price: 1600,
+    rooms: 2,
+    bathrooms: 2,
+    surface: 70,
+    location: "Barcelona, Barceloneta",
+    description: "Near the beach, bright living room, balcony with sea view.",
+    imageUrl: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+    interested: false,
+    createdAt: "2026-02-03T12:15:00Z"
+  }
+];
