@@ -53,7 +53,7 @@ export default function ApartmentCreate({ setApartments, setView }) {
   };
 
   return (
-    <div>
+    <div className="apartment-create">
       <h1>Create Apartment</h1>
 
       <div>
