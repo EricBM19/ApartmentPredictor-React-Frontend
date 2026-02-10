@@ -25,7 +25,7 @@ export default function ApartmentCreate({ setApartments, setView }) {
 
   const handleCreate = () => {
     if (!newApartment.id || !newApartment.title) {
-      alert("ID y title son obligatorios");
+      alert("ID i title son obligatoris");
       return;
     }
 

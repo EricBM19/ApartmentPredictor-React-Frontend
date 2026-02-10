@@ -10,9 +10,9 @@ export default function ApartmentDelete({ apartments, setApartments }) {
       <ul>
         {apartments.map((apartment) => (
           <li key={apartment.id}>
-            {apartment.title} {apartment.location}
-            <button onClick={() => handleDelete(apartment.id)}>
-              Delete
+            <strong>{apartment.title}</strong>: {apartment.location}
+            <button className='deleteButton' onClick={() => handleDelete(apartment.id)}>
+              🗑 Delete
             </button>
           </li>
         ))}

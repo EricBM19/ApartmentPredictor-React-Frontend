@@ -23,6 +23,7 @@ a:hover {
 }
 
 body {
+  background-color:seashell;
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -70,6 +71,8 @@ button:focus-visible {
   }
 }
 
+/* My CSS: */
+
 .apartments-table {
   width: 95%;
   margin: 2rem auto;
@@ -111,7 +114,7 @@ button:focus-visible {
 }
 
 .apartments-table tr:hover {
-  background-color: lightblue;
+  background-color:aliceblue;
 }
 
 .apartments-table tr {
@@ -119,6 +122,7 @@ button:focus-visible {
 }
 
 .btn {
+  border: 2px solid black;
   border-radius: 20px;
   padding: 0.5em 1em;
   font-weight: 500;
@@ -197,4 +201,22 @@ button:focus-visible {
 .apartment-create button:hover {
   background-color: darkcyan;
   transform: translateY(-1px);
+}
+
+.deleteButton {
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 0.3rem 0.5rem;
+  font-size: 0.9rem;
+  margin-left: 1rem;
+  background-color:tomato;
+  color: white;
+}
+
+.deleteButton:hover {
+  background-color:brown;
+}
+
+li {
+  margin-bottom: 0.75rem;
 }
